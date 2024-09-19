@@ -9,7 +9,8 @@ var curr
 
 func _on_tower_body_entered(body):
 	if "soldier A" in body.name: 
-		pass # Replace with function body.
+		var tempArray = []
+		currTargets = get_node("Tower")
 
 
 func _on_tower_body_exited(body):
