@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 800
+@export var speed = 80
 # Called when the node enters the scene tree for the first time.
 #func _ready():
 	#pass # Replace with function body.
