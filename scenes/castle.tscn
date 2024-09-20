@@ -65,7 +65,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 14.0
+"speed": 7.0
 }]
 
 [node name="Castle" type="StaticBody2D"]
@@ -83,9 +83,6 @@ shape = SubResource("CircleShape2D_dqa88")
 position = Vector2(-1, 29.5)
 shape = SubResource("RectangleShape2D_lt38h")
 
-[node name="Aim" type="Marker2D" parent="."]
-position = Vector2(24, -12)
-
 [node name="Castle" type="Sprite2D" parent="."]
 texture = ExtResource("1_jmfa6")
 
@@ -98,6 +95,10 @@ texture = ExtResource("2_0md2y")
 position = Vector2(13.283, -3.58879)
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_dh4o3")
+
+[node name="Aim" type="Marker2D" parent="Archer"]
+position = Vector2(21.1321, -2.99066)
+scale = Vector2(1.20755, 1.19626)
 
 [node name="ArrowContainer" type="Node" parent="."]
 

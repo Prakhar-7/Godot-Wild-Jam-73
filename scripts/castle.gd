@@ -41,7 +41,7 @@ func _on_tower_body_entered(body):
 		tempArrow.pathName = pathName
 		tempArrow.arrowDamage = ArrowDamage
 		get_node("ArrowContainer").add_child(tempArrow)
-		tempArrow.global_position = $Aim.global_position
+		tempArrow.global_position =$Archer/Aim.global_position
 		
 
 func _on_tower_body_exited(body):
