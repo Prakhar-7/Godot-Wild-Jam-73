@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://be1ixo1bku7x0" path="res://scenes/tile_map.tscn" id="1_ly4av"]
 [ext_resource type="Script" path="res://scripts/PathSpawner.gd" id="2_03jsy"]
-[ext_resource type="PackedScene" uid="uid://wmg38eg7u3sw" path="res://Tower/castle.tscn" id="3_4838o"]
+[ext_resource type="PackedScene" uid="uid://ccblimj4cbkp7" path="res://scenes/castle.tscn" id="3_th6w1"]
 
 [node name="Level 1" type="Node2D"]
 
@@ -18,9 +18,7 @@ script = ExtResource("2_03jsy")
 [node name="Timer" type="Timer" parent="PathSpawner"]
 autostart = true
 
-[node name="Towers" type="Node" parent="."]
-
-[node name="Castle" parent="Towers" instance=ExtResource("3_4838o")]
-position = Vector2(107, 201)
+[node name="Castle" parent="." instance=ExtResource("3_th6w1")]
+position = Vector2(83, 171)
 
 [connection signal="timeout" from="PathSpawner/Timer" to="PathSpawner" method="_on_timer_timeout"]
