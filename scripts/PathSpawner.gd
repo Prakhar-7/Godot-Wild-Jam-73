@@ -5,3 +5,7 @@ extends Node
 func _on_timer_timeout():
 	var tempath = path.instantiate()
 	add_child(tempath)
+
+
+func _on_back_pressed():
+	pass # Replace with function body.
