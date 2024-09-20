@@ -5,6 +5,7 @@ var ArrowDamage = 5
 var pathName 
 var currTargets = []
 var curr
+@onready var bow = $Archer/Bow
 
 func _on_tower_body_entered(body):
 	if "Soldier A" in body.name: 
@@ -17,7 +18,7 @@ func _on_tower_body_entered(body):
 				tempArray.append(i)
 		
 		var currTarget = null
-		
+		bow.play()
 		# Choose the target based on progress
 		for i in tempArray:
 			if currTarget == null:
@@ -27,7 +28,6 @@ func _on_tower_body_entered(body):
 						currTarget = i.get_node("../")
 		
 		curr = currTarget
-		print(curr.get_parent().name)
 		pathName = currTarget.get_parent().name
 		
 		# Instantiate and configure the arrow

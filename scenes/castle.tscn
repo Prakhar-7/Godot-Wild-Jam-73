@@ -65,7 +65,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 12.0
+"speed": 14.0
 }]
 
 [node name="Castle" type="StaticBody2D"]
