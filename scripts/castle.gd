@@ -8,7 +8,6 @@ var curr
 
 func _on_tower_body_entered(body):
 	if "Soldier A" in body.name: 
-		print("body entered")
 		var tempArray = []
 		currTargets = get_node("Tower").get_overlapping_bodies()  # Get overlapping bodies
 		
@@ -16,34 +15,27 @@ func _on_tower_body_entered(body):
 		for i in currTargets:
 			if "Soldier" in i.name:
 				tempArray.append(i)
-				print(i.name)
 		
 		var currTarget = null
 		
 		# Choose the target based on progress
 		for i in tempArray:
-			print(i.get_parent())
-			var parent_node = i.get_parent()  # Get the parent node
-			if parent_node and parent_node.has_method("get_progress"):  # Ensure method exists
-				if currTarget == null:
-					currTarget = parent_node
-				else:
-					if parent_node.get_progress() > currTarget.get_progress():
-						currTarget = parent_node
+			if currTarget == null:
+				currTarget = i.get_node("../")
+			else:
+				if i.get_parent().get_progress() > currTarget.get_progress():
+						currTarget = i.get_node("../")
 		
-		if currTarget != null:
-			pathName = currTarget.name
-			curr = currTarget
-			
-			# Instantiate and configure the arrow
-			var tempArrow = Arrow.instantiate()
-			print("Arrow instantiated")
-			tempArrow.pathName = pathName
-			tempArrow.ArrowDamage = ArrowDamage
-			get_node("ArrowContainer").add_child(tempArrow)
-			tempArrow.global_position = $Aim.global_position
-		else:
-			print("No valid target found")
+		curr = currTarget
+		print(curr.get_parent().name)
+		pathName = currTarget.get_parent().name
+		
+		# Instantiate and configure the arrow
+		var tempArrow = Arrow.instantiate()
+		tempArrow.pathName = pathName
+		tempArrow.arrowDamage = ArrowDamage
+		get_node("ArrowContainer").add_child(tempArrow)
+		tempArrow.global_position = $Aim.global_position
 		
 
 func _on_tower_body_exited(body):
