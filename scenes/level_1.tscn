@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://brcph14vfcab"]
+[gd_scene load_steps=6 format=3 uid="uid://brcph14vfcab"]
 
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_3j042"]
 [ext_resource type="PackedScene" uid="uid://be1ixo1bku7x0" path="res://scenes/tile_map.tscn" id="1_ly4av"]
 [ext_resource type="Script" path="res://scripts/PathSpawner.gd" id="2_03jsy"]
 [ext_resource type="PackedScene" uid="uid://ccblimj4cbkp7" path="res://scenes/castle.tscn" id="3_th6w1"]
+[ext_resource type="PackedScene" uid="uid://b0xqtaxu6k5wh" path="res://scenes/ui.tscn" id="5_ovvb6"]
 
 [node name="Level 1" type="Node2D"]
 script = ExtResource("1_3j042")
@@ -25,6 +26,8 @@ position = Vector2(83, 171)
 
 [node name="Castle2" parent="." instance=ExtResource("3_th6w1")]
 position = Vector2(1064, 375)
+
+[node name="UI" parent="." instance=ExtResource("5_ovvb6")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

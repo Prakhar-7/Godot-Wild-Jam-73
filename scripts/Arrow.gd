@@ -21,6 +21,6 @@ func _physics_process(delta):
 func _on_area_2d_body_entered(body):
 	if body.name == "Soldier A":
 		body.health -= arrowDamage
-		print("Arrow hit Soldier A! Destroying arrow.")
+		#print("Arrow hit Soldier A! Destroying arrow.")
 		queue_free()  # This will remove the arrow from the scene
 

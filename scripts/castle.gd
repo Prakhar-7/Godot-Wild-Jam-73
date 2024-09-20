@@ -11,7 +11,9 @@ func _process(delta):
 	if is_instance_valid(curr):
 		var archer = $Archer  # Adjust the path to Archer node based on the structure
 		archer.look_at(curr.global_position)
-
+	else:
+		for i in get_node("ArrowContainer").get_child_count():
+			get_node("ArrowContainer").get_child(i).queue_free()
 
 func _on_tower_body_entered(body):
 	if "Soldier A" in body.name: 
