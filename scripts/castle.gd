@@ -7,6 +7,12 @@ var currTargets = []
 var curr
 @onready var bow = $Archer/Bow
 
+func _process(delta):
+	if is_instance_valid(curr):
+		var archer = $Archer  # Adjust the path to Archer node based on the structure
+		archer.look_at(curr.global_position)
+
+
 func _on_tower_body_entered(body):
 	if "Soldier A" in body.name: 
 		var tempArray = []
