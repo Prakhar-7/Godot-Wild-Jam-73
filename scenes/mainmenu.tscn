@@ -1,6 +1,33 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvn1j3sutyces"]
+[gd_scene load_steps=5 format=3 uid="uid://b1w0oi3rqbp57"]
 
 [ext_resource type="Script" path="res://scripts/Mainmenu.gd" id="1_5arm7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_msf2e"]
+bg_color = Color(0.356631, 0.691195, 0.329719, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hpfeu"]
+bg_color = Color(0.33121, 0.627614, 0.864597, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(3.85046e-07, 0.193845, 0.522131, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7y7qk"]
+bg_color = Color(0.919506, 0.429268, 0.36608, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.546204, 0.171304, 0.133541, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
 
 [node name="Mainmenu" type="Control"]
 layout_mode = 3
@@ -18,30 +45,51 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_msf2e")
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="Label" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -251.5
+offset_top = 143.0
+offset_right = 251.5
+offset_bottom = 275.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 70
+text = "Tower Defence
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = -24.0
+offset_right = 110.0
+offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "Game Title"
-
-[node name="Start" type="Button" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 31
+theme_override_styles/normal = SubResource("StyleBoxFlat_hpfeu")
 text = "Start"
 
-[node name="Quit" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="Quit" type="Button" parent="."]
 layout_mode = 2
+offset_left = 432.0
+offset_top = 393.0
+offset_right = 650.0
+offset_bottom = 437.0
+theme_override_font_sizes/font_size = 31
+theme_override_styles/normal = SubResource("StyleBoxFlat_7y7qk")
 text = "Quit"
 
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
