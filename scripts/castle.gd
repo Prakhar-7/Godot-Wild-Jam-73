@@ -48,3 +48,13 @@ func _on_tower_body_entered(body):
 
 func _on_tower_body_exited(body):
 	bow.stop()
+
+
+func _on_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.button_mask == 1:
+		var towerPath = get_tree().get_root().get_node("Level 1/Castles")
+		for i in towerPath.get_child_count():
+			if towerPath.get_child(i).name != self.name:
+				towerPath.get_child(i).get_node("Upgrade/Upgrade").hide()
+		get_node("Upgrade/Upgrade").visible = !get_node("Upgrade/Upgrade").visible
+		get_node("Upgrade/Upgrade").global_position = self.position + Vector2(-572,81)
