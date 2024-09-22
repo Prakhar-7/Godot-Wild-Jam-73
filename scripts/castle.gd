@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 var Arrow = preload("res://scenes/Arrow.tscn")
-var ArrowDamage = 5
+var ArrowDamage = 2
 var pathName 
 var currTargets = []
 var curr
