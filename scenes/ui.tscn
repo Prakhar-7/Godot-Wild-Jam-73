@@ -1,74 +1,42 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0xqtaxu6k5wh"]
+[gd_scene load_steps=2 format=3 uid="uid://bg15dpncu6qen"]
 
-[ext_resource type="PackedScene" uid="uid://uen2ebjovc46" path="res://scenes/shop_item.tscn" id="1_7n1k0"]
-
-[sub_resource type="GDScript" id="GDScript_r366x"]
-script/source = "extends Label
-
-
-func _process(delta):
-	self.text = \"Health: \" + str(Game.Health)
-"
-
-[sub_resource type="GDScript" id="GDScript_e76wr"]
-script/source = "extends Label
-
-
-func _process(delta):
-	self.text = \"Gold: \" + str(Game.Gold)
-"
+[ext_resource type="PackedScene" uid="uid://bjdxxjcmtucuh" path="res://castle_panel.tscn" id="1_o8xhn"]
 
 [node name="UI" type="CanvasLayer"]
 
 [node name="Panel" type="Panel" parent="."]
-offset_left = 839.0
-offset_top = 26.0
-offset_right = 1073.0
-offset_bottom = 676.0
+offset_left = 850.0
+offset_top = 3.0
+offset_right = 1055.0
+offset_bottom = 718.0
 
 [node name="FlowContainer" type="FlowContainer" parent="Panel"]
-layout_mode = 0
-offset_left = 19.0
-offset_top = 8.0
-offset_right = 225.0
-offset_bottom = 628.0
-theme_override_constants/h_separation = 30
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -332.0
+offset_right = 93.0
+offset_bottom = 332.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 
-[node name="ShopItem2" parent="Panel/FlowContainer" instance=ExtResource("1_7n1k0")]
+[node name="CastlePanel2" parent="Panel/FlowContainer" instance=ExtResource("1_o8xhn")]
 layout_mode = 2
 
-[node name="ShopItem3" parent="Panel/FlowContainer" instance=ExtResource("1_7n1k0")]
+[node name="CastlePanel3" parent="Panel/FlowContainer" instance=ExtResource("1_o8xhn")]
 layout_mode = 2
 
-[node name="ShopItem4" parent="Panel/FlowContainer" instance=ExtResource("1_7n1k0")]
+[node name="CastlePanel4" parent="Panel/FlowContainer" instance=ExtResource("1_o8xhn")]
 layout_mode = 2
 
-[node name="ShopItem5" parent="Panel/FlowContainer" instance=ExtResource("1_7n1k0")]
+[node name="CastlePanel5" parent="Panel/FlowContainer" instance=ExtResource("1_o8xhn")]
 layout_mode = 2
 
-[node name="ShopItem6" parent="Panel/FlowContainer" instance=ExtResource("1_7n1k0")]
+[node name="CastlePanel6" parent="Panel/FlowContainer" instance=ExtResource("1_o8xhn")]
 layout_mode = 2
-
-[node name="ShopItem" parent="Panel" instance=ExtResource("1_7n1k0")]
-layout_mode = 2
-offset_left = 19.0
-offset_top = 8.0
-offset_right = 99.0
-offset_bottom = 88.0
-
-[node name="Health" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_font_sizes/font_size = 50
-text = "Health:"
-script = SubResource("GDScript_r366x")
-
-[node name="Gold" type="Label" parent="."]
-offset_left = 285.0
-offset_top = 4.0
-offset_right = 461.0
-offset_bottom = 73.0
-theme_override_font_sizes/font_size = 50
-text = "Gold:"
-script = SubResource("GDScript_e76wr")

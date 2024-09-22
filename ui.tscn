@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bcvno6k2dh452"]
+[gd_scene load_steps=4 format=3 uid="uid://ccjpwmh52kq8i"]
 
-[ext_resource type="PackedScene" uid="uid://bkah1j0dhwha4" path="res://castle_panel.tscn" id="1_ccfdg"]
+[ext_resource type="PackedScene" uid="uid://bjdxxjcmtucuh" path="res://castle_panel.tscn" id="1_ccfdg"]
 [ext_resource type="Script" path="res://scripts/Health.gd" id="2_a268t"]
 [ext_resource type="Script" path="res://scripts/Gold.gd" id="3_skmnt"]
 
