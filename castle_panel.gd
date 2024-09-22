@@ -5,6 +5,7 @@ var currTile
 
 var valid_tiles = [Vector2i(10, 0), Vector2i(10, 1), Vector2i(11, 0), Vector2i(11, 1)]
 var tower_size = Vector2i(2.5, 2.5)
+@onready var error = $error
 
 
 func _on_gui_input(event):
@@ -19,6 +20,7 @@ func _on_gui_input(event):
 		#Left Click Down
 		add_child(tempTower)
 		tempTower.process_mode = Node.PROCESS_MODE_DISABLED
+		tempTower.global_position = event.global_position
 		
 		
 	elif event is InputEventMouseMotion and event.button_mask == 1:
@@ -26,6 +28,8 @@ func _on_gui_input(event):
 		if get_child_count() > 1:
 			get_child(1).global_position = event.global_position
 		
+		
+		var targets = get_child(1).get_node("TowerDetector").get_overlapping_bodies()
 		if can_place_tower(currTile, mapPath):
 			get_child(1).get_node("Area").modulate = Color(0,255,0 , 0.1)
 		else:

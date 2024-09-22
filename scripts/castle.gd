@@ -6,6 +6,7 @@ var pathName
 var currTargets = []
 var curr
 @onready var bow = $Archer/Bow
+@onready var shoot = $Shoot
 
 func _process(delta):
 	if is_instance_valid(curr):
@@ -27,6 +28,7 @@ func _on_tower_body_entered(body):
 		
 		var currTarget = null
 		bow.play()
+		shoot.play()
 		# Choose the target based on progress
 		for i in tempArray:
 			if currTarget == null:
