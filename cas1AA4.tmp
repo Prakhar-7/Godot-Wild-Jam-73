@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjdxxjcmtucuh"]
+
+[ext_resource type="Script" path="res://castle_panel.gd" id="1_exc58"]
+[ext_resource type="Texture2D" uid="uid://74piev81ee02" path="res://assets/Castle.png" id="1_ks0mo"]
+
+[node name="CastlePanel" type="Panel"]
+custom_minimum_size = Vector2(80, 80)
+offset_left = 3.0
+offset_right = 61.0
+offset_bottom = 67.0
+script = ExtResource("1_exc58")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(15, 16)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_ks0mo")
+offset = Vector2(40, 40)
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

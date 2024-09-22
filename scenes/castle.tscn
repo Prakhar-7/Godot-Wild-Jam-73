@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ccblimj4cbkp7"]
+[gd_scene load_steps=16 format=3 uid="uid://ccblimj4cbkp7"]
 
 [ext_resource type="Script" path="res://scripts/castle.gd" id="1_g2sxq"]
 [ext_resource type="Texture2D" uid="uid://74piev81ee02" path="res://assets/Castle.png" id="1_jmfa6"]
@@ -68,8 +68,20 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fcjev"]
+bg_color = Color(1, 0.346528, 0.245421, 1)
+corner_radius_top_left = 21
+corner_radius_top_right = 21
+corner_radius_bottom_right = 21
+corner_radius_bottom_left = 21
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
 [node name="Castle" type="StaticBody2D"]
 z_index = 1
+position = Vector2(0, 21)
 scale = Vector2(2, 2)
 script = ExtResource("1_g2sxq")
 
@@ -79,7 +91,7 @@ script = ExtResource("1_g2sxq")
 position = Vector2(0, 22)
 shape = SubResource("CircleShape2D_dqa88")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Overlapping" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 29.5)
 shape = SubResource("RectangleShape2D_lt38h")
 
@@ -101,6 +113,16 @@ position = Vector2(21.1321, -2.99066)
 scale = Vector2(1.20755, 1.19626)
 
 [node name="ArrowContainer" type="Node" parent="."]
+
+[node name="Area" type="Panel" parent="."]
+modulate = Color(0, 0, 0, 0.109804)
+offset_left = -100.0
+offset_top = -80.0
+offset_right = -60.0
+offset_bottom = -40.0
+scale = Vector2(5, 5)
+size_flags_stretch_ratio = 0.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fcjev")
 
 [connection signal="body_entered" from="Tower" to="." method="_on_tower_body_entered"]
 [connection signal="body_exited" from="Tower" to="." method="_on_tower_body_exited"]
