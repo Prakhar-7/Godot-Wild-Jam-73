@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://brcph14vfcab"]
+[gd_scene load_steps=6 format=3 uid="uid://brcph14vfcab"]
 
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_3j042"]
 [ext_resource type="PackedScene" uid="uid://be1ixo1bku7x0" path="res://scenes/tile_map.tscn" id="1_ly4av"]
 [ext_resource type="Script" path="res://scripts/PathSpawner.gd" id="2_03jsy"]
-[ext_resource type="PackedScene" uid="uid://ccblimj4cbkp7" path="res://scenes/castle.tscn" id="3_th6w1"]
 [ext_resource type="PackedScene" uid="uid://bjdxxjcmtucuh" path="res://castle_panel.tscn" id="6_if1v1"]
 [ext_resource type="Texture2D" uid="uid://bjowb8cf8gx8y" path="res://assets/Entrance.png" id="6_of8u2"]
 
@@ -18,12 +17,6 @@ script = ExtResource("2_03jsy")
 
 [node name="Timer" type="Timer" parent="PathSpawner"]
 autostart = true
-
-[node name="Castle" parent="." instance=ExtResource("3_th6w1")]
-position = Vector2(353, 466)
-
-[node name="Castle2" parent="." instance=ExtResource("3_th6w1")]
-position = Vector2(604, 443)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -69,5 +62,7 @@ position = Vector2(1098, 516)
 rotation = 0.0281847
 scale = Vector2(1, 1.60547)
 texture = ExtResource("6_of8u2")
+
+[node name="Castles" type="Node2D" parent="."]
 
 [connection signal="timeout" from="PathSpawner/Timer" to="PathSpawner" method="_on_timer_timeout"]
