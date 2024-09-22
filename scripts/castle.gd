@@ -47,4 +47,4 @@ func _on_tower_body_entered(body):
 		
 
 func _on_tower_body_exited(body):
-	pass
+	bow.stop()
