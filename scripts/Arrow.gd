@@ -5,6 +5,8 @@ var speed = 1000
 var pathName = ""  # Assuming you want to target PathFollow2D
 var arrowDamage = 0
 
+
+
 func _physics_process(delta):
 	var pathSpawnerNode = get_tree().get_root().get_node("Level 1/PathSpawner")
 	

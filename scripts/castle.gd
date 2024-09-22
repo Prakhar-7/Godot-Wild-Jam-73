@@ -6,6 +6,7 @@ var pathName
 var currTargets = []
 var curr
 @onready var bow = $Archer/Bow
+@onready var shoot = $Shoot
 
 func _process(delta):
 	if is_instance_valid(curr):
@@ -16,6 +17,7 @@ func _process(delta):
 			get_node("ArrowContainer").get_child(i).queue_free()
 
 func _on_tower_body_entered(body):
+	print(body , "entered")
 	if "Soldier A" in body.name: 
 		var tempArray = []
 		currTargets = get_node("Tower").get_overlapping_bodies()  # Get overlapping bodies
@@ -27,6 +29,7 @@ func _on_tower_body_entered(body):
 		
 		var currTarget = null
 		bow.play()
+		shoot.play()
 		# Choose the target based on progress
 		for i in tempArray:
 			if currTarget == null:
