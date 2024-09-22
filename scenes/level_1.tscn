@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_3j042"]
 [ext_resource type="PackedScene" uid="uid://be1ixo1bku7x0" path="res://scenes/tile_map.tscn" id="1_ly4av"]
 [ext_resource type="Script" path="res://scripts/PathSpawner.gd" id="2_03jsy"]
-[ext_resource type="PackedScene" uid="uid://bcvno6k2dh452" path="res://ui.tscn" id="3_75shs"]
+[ext_resource type="PackedScene" path="res://ui.tscn" id="3_75shs"]
 [ext_resource type="Texture2D" uid="uid://bjowb8cf8gx8y" path="res://assets/Entrance.png" id="6_of8u2"]
 
 [node name="Level 1" type="Node2D"]
