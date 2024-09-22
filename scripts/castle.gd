@@ -28,7 +28,7 @@ func _on_tower_body_entered(body):
 		
 		var currTarget = null
 		bow.play()
-		#shoot.play()
+		shoot.play()
 		# Choose the target based on progress
 		for i in tempArray:
 			if currTarget == null:
