@@ -30,8 +30,12 @@ func _on_gui_input(event):
 		
 		
 		var targets = get_child(1).get_node("TowerDetector").get_overlapping_bodies()
+		
 		if can_place_tower(currTile, mapPath):
-			get_child(1).get_node("Area").modulate = Color(0,255,0 , 0.1)
+			if targets.size() > 0 :
+				get_child(1).get_node("Area").modulate = Color(255, 0, 0 , 0.4)
+			else:
+				get_child(1).get_node("Area").modulate = Color(0,255,0 , 0.1)
 		else:
 			get_child(1).get_node("Area").modulate = Color(255, 0, 0 , 0.4)
 			
@@ -43,14 +47,14 @@ func _on_gui_input(event):
 		if get_child_count() > 1:
 			get_child(1).queue_free()
 		
-		
+		var targets = get_child(1).get_node("TowerDetector").get_overlapping_bodies()
 		
 		if can_place_tower(currTile, mapPath):
 			var path = get_tree().get_root().get_node("Level 1/Castles")
-			
-			path.add_child(tempTower)
-			tempTower.global_position = event.global_position
-			tempTower.get_node("Area").hide()
+			if targets.size() < 1:
+				path.add_child(tempTower)
+				tempTower.global_position = event.global_position
+				tempTower.get_node("Area").hide()
 	else:
 		if get_child_count() > 1:
 			get_child(1).queue_free()

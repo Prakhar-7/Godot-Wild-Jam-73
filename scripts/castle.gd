@@ -17,6 +17,7 @@ func _process(delta):
 			get_node("ArrowContainer").get_child(i).queue_free()
 
 func _on_tower_body_entered(body):
+	print(body , "entered")
 	if "Soldier A" in body.name: 
 		var tempArray = []
 		currTargets = get_node("Tower").get_overlapping_bodies()  # Get overlapping bodies
