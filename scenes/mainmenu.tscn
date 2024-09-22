@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1w0oi3rqbp57"]
+[gd_scene load_steps=5 format=3 uid="uid://b1w0oi3rqbp57"]
 
 [ext_resource type="Script" path="res://scripts/Mainmenu.gd" id="1_5arm7"]
-[ext_resource type="PackedScene" uid="uid://bjdxxjcmtucuh" path="res://castle_panel.tscn" id="2_060x3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_msf2e"]
 bg_color = Color(0.356631, 0.691195, 0.329719, 1)
@@ -91,13 +90,6 @@ offset_bottom = 437.0
 theme_override_font_sizes/font_size = 31
 theme_override_styles/normal = SubResource("StyleBoxFlat_7y7qk")
 text = "Quit"
-
-[node name="CastlePanel" parent="." instance=ExtResource("2_060x3")]
-layout_mode = 0
-offset_left = 951.249
-offset_top = 175.409
-offset_right = 1031.25
-offset_bottom = 255.409
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
