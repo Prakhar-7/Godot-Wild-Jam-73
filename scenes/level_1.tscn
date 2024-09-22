@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://be1ixo1bku7x0" path="res://scenes/tile_map.tscn" id="1_ly4av"]
 [ext_resource type="Script" path="res://scripts/PathSpawner.gd" id="2_03jsy"]
 [ext_resource type="PackedScene" uid="uid://ccblimj4cbkp7" path="res://scenes/castle.tscn" id="3_th6w1"]
-[ext_resource type="PackedScene" uid="uid://bjdxxjcmtucuh" path="res://castle_panel.tscn" id="6_if1v1"]
+[ext_resource type="PackedScene" uid="uid://bkah1j0dhwha4" path="res://castle_panel.tscn" id="6_if1v1"]
 
 [node name="Level 1" type="Node2D"]
 script = ExtResource("1_3j042")

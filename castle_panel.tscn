@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjdxxjcmtucuh"]
+[gd_scene load_steps=3 format=3 uid="uid://bkah1j0dhwha4"]
 
 [ext_resource type="Script" path="res://castle_panel.gd" id="1_exc58"]
 [ext_resource type="Texture2D" uid="uid://74piev81ee02" path="res://assets/Castle.png" id="1_ks0mo"]
