@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ccblimj4cbkp7"]
+[gd_scene load_steps=16 format=3 uid="uid://ccblimj4cbkp7"]
 
 [ext_resource type="Script" path="res://scripts/castle.gd" id="1_g2sxq"]
 [ext_resource type="Texture2D" uid="uid://74piev81ee02" path="res://assets/Castle.png" id="1_jmfa6"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://6or5af1snc4a" path="res://assets/Bow.png" id="3_110i7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dqa88"]
-radius = 114.501
+radius = 100.52
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lt38h"]
 size = Vector2(60, 47)
@@ -68,6 +68,14 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sgrdu"]
+bg_color = Color(0.980392, 0.0117647, 0, 0.486275)
+corner_radius_top_left = 450
+corner_radius_top_right = 450
+corner_radius_bottom_right = 450
+corner_radius_bottom_left = 450
+corner_detail = 20
+
 [node name="Castle" type="StaticBody2D"]
 z_index = 1
 scale = Vector2(2, 2)
@@ -78,6 +86,7 @@ script = ExtResource("1_g2sxq")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Tower"]
 position = Vector2(0, 22)
 shape = SubResource("CircleShape2D_dqa88")
+one_way_collision_margin = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 29.5)
@@ -101,6 +110,14 @@ position = Vector2(21.1321, -2.99066)
 scale = Vector2(1.20755, 1.19626)
 
 [node name="ArrowContainer" type="Node" parent="."]
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+offset_left = -99.5
+offset_top = -77.5
+offset_right = -6.5
+offset_bottom = 15.5
+theme_override_styles/panel = SubResource("StyleBoxFlat_sgrdu")
 
 [connection signal="body_entered" from="Tower" to="." method="_on_tower_body_entered"]
 [connection signal="body_exited" from="Tower" to="." method="_on_tower_body_exited"]
